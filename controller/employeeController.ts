@@ -17,6 +17,27 @@ module.exports = function (app: Application) {
         res.render('list-delivery-employees', { deliveryEmployees: data, token })
     })
 
+
+app.get('/employee/delivery/create', async (req:Request, res: Response) => {
+    res.render('add-delivery-employee')
+})
+
+app.post('/employee/delivery/create', async (req:Request, res:Response) => {
+    let data: DeliveryEmployee = req.body
+    let id: Number
+
+    try {
+        console.log(data)
+        id = await employeeService.createEmployee(data)
+        res.redirect('/employees/delivery')
+    } catch(e) {
+        console.error(e);
+        res.locals.errormessage = e.message
+        res.render('add-delivery-employee', req.body)
+    }
+})
+
+
     app.get ('/employees/delivery/:id', async (req: Request, res: Response) => {
         let data: DeliveryEmployee[] = [];
 
