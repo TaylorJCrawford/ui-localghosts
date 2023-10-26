@@ -27,6 +27,7 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
-        res.render('list-delivery-employee', { employee: data })
+        const { token } = req.session;
+        res.render('list-delivery-employee', { employee: data, token })
     })
 }
