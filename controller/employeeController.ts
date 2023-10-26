@@ -19,7 +19,8 @@ module.exports = function (app: Application) {
 
 
 app.get('/employee/delivery/create', async (req:Request, res: Response) => {
-    res.render('add-delivery-employee')
+    const { token } = req.session;
+    res.render('add-delivery-employee', { token })
 })
 
 app.post('/employee/delivery/create', async (req:Request, res:Response) => {
