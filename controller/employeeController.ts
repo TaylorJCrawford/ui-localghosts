@@ -8,11 +8,25 @@ module.exports = function (app: Application) {
         let data: DeliveryEmployee[] = [];
 
         try {
-            data = await employeeService.getDeliveryEmployees()
+            data = await employeeService.getDeliveryEmployees();
         } catch (e) {
             console.error(e);
         }
 
         res.render('list-delivery-employees', { deliveryEmployees: data })
+    })
+
+    app.get ('/employees/delivery/:id', async (req: Request, res: Response) => {
+        let data: DeliveryEmployee[] = [];
+
+        try {
+            data = await employeeService.getDeliveryEmployeeById(req.params.id);
+            console.log(data);
+
+        } catch (e) {
+            console.error(e);
+        }
+
+        res.render('list-delivery-employee', { employee: data })
     })
 }
