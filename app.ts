@@ -44,3 +44,5 @@ app.listen(3000, () => {
 app.get('/', (req: Request, res: Response) => {
     res.render('home', {pageTitle: "Employee Managment System"});
 });
+
+require('./controller/employeeController')(app);
