@@ -1,0 +1,28 @@
+{% extends 'templates/master.html' %}
+
+{% block content %}
+
+<h1>Delivery Employees</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Bank Account Number</th>
+            <th scope="col">National Insurance Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in deliveryEmployees %}
+        <tr>
+            <td>{{ employee.firstName }} {{ employee.lastname }}</td>
+            <td>£{{ employee.salary }}</td>
+            <td>{{ employee.bankAccountNumber}}</td>
+            <td>{{ employee.niNumber }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
