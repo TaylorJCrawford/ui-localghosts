@@ -21,7 +21,6 @@ module.exports = function (app: Application) {
 
         try {
             data = await employeeService.getDeliveryEmployeeById(req.params.id);
-            console.log(data);
 
         } catch (e) {
             console.error(e);
