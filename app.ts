@@ -41,6 +41,6 @@ app.listen(3000, () => {
 });
 
     // Express Routes
-app.get('/home', (req: Request, res: Response) => {
-    res.render('home');
+app.get('/', (req: Request, res: Response) => {
+    res.render('home', {pageTitle: "Employee Managment System"});
 });
