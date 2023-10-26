@@ -4,5 +4,5 @@ export class DeliveryEmployee {
     lastName: string
     salary: number
     bankAccountNumber: string
-    nationalInsuranceNumber: string
+    niNumber: string
 }

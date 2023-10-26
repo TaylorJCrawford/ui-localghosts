@@ -13,6 +13,8 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
+        console.log(data)
+
         res.render('list-delivery-employees', { deliveryEmployees: data })
     })
 }
