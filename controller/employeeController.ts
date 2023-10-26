@@ -13,7 +13,8 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
-        res.render('list-delivery-employees', { deliveryEmployees: data })
+        const { token } = req.session;
+        res.render('list-delivery-employees', { deliveryEmployees: data, token })
     })
 
 
@@ -47,6 +48,7 @@ app.post('/employee/delivery/create', async (req:Request, res:Response) => {
             console.error(e);
         }
 
-        res.render('list-delivery-employee', { employee: data })
+        const { token } = req.session;
+        res.render('list-delivery-employee', { employee: data, token })
     })
 }
