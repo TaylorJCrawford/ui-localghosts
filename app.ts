@@ -31,7 +31,7 @@ app.use(session({ secret: "NOT HARDCODED SECRET", cookie: {maxAge: 3600000} }));
 
 declare module "express-session" {
     interface SessionData {
-        // Place Holder For Session objects
+        token: String
     }
 }
 
@@ -45,4 +45,5 @@ app.get('/', (req: Request, res: Response) => {
     res.render('home', {pageTitle: "Employee Managment System"});
 });
 
+require('./controller/authController')(app);
 require('./controller/employeeController')(app);

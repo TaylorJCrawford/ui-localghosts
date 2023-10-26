@@ -13,6 +13,8 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
-        res.render('list-delivery-employees', { deliveryEmployees: data })
+        let tokenValue: String = req.session.token
+
+        res.render('list-delivery-employees', { deliveryEmployees: data, token: tokenValue })
     })
 }
