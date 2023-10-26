@@ -1,7 +1,8 @@
 
 body {
     background-color: black;
-    background-image:url('https://picsum.photos/3000/3000?random=2');
+    /* background-image:url('https://picsum.photos/3000/3000?random=2'); */
+    background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=2938&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -9,23 +10,23 @@ body {
 }
 
 .main-content {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.913);
     height: 85vh;
-    width: 50vw;
+    width: 70vw;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
 .center {
   margin: auto;
-  width: 50%;
+  width: 70%;
   padding: 10px;
 }
 
 /* Nav Bar */
 .custom-nav {
-    width: 50vw;
-    background-color: rgba(220,220,220, 0.9);
+    width: 70vw;
+    background-color: rgba(255, 255, 255, 0.913);
     color: black;
 }
 
@@ -43,4 +44,12 @@ body {
 
 #nav-cust-link:hover {
     color: rgb(0, 0, 0);
+}
+
+#navbarNav {
+    margin-left: 70px;
+}
+
+#team-image {
+    width: 60%;
 }
