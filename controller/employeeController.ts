@@ -8,7 +8,7 @@ module.exports = function (app: Application) {
         let data: DeliveryEmployee[] = [];
 
         try {
-            data = await employeeService.getDeliveryEmployees()
+            data = await employeeService.getDeliveryEmployees();
         } catch (e) {
             console.error(e);
         }
@@ -36,4 +36,17 @@ app.post('/employee/delivery/create', async (req:Request, res:Response) => {
     }
 })
 
+
+    app.get ('/employees/delivery/:id', async (req: Request, res: Response) => {
+        let data: DeliveryEmployee[] = [];
+
+        try {
+            data = await employeeService.getDeliveryEmployeeById(req.params.id);
+
+        } catch (e) {
+            console.error(e);
+        }
+
+        res.render('list-delivery-employee', { employee: data })
+    })
 }
