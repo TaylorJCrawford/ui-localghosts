@@ -42,7 +42,8 @@ app.listen(3000, () => {
 
     // Express Routes
 app.get('/', (req: Request, res: Response) => {
-    res.render('home', {pageTitle: "Employee Managment System"});
+    const { token } = req.session;
+    res.render('home', {pageTitle: "Employee Managment System", token});
 });
 
 require('./controller/authController')(app);
