@@ -11,10 +11,15 @@ body {
 
 .main-content {
     background-color: rgba(255, 255, 255, 0.913);
-    height: 85vh;
+    height: 90vh;
     width: 70vw;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+#home-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .center {
@@ -52,4 +57,30 @@ body {
 
 #team-image {
     width: 60%;
+}
+
+#login-form {
+    padding: 0px 50px 0px 50px;
+}
+
+.login-titles {
+    font-weight: bold;
+}
+
+.auth-heading {
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.custom-button {
+    margin-top: 10px;
+    background-color: #42B54C;
+    color: white;
+}
+
+#home-image-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
 }
