@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Nav Start -->
+    <br>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark custom-nav center">
+          <a class="navbar-brand" id="nav-cust-link" href="#">Kainoos Sofworn</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#" id="nav-cust-link">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" id="nav-cust-link">Features</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" id="nav-cust-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"  id="nav-cust-link">Contact Us</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="login" id="nav-cust-link">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"href="new_user" id="nav-cust-link">Signup</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      </div>
+    <!-- Nav End -->
+
+      <br>
+      <div class="main-content center">
+        {% block content %} {% endblock %}
+      </div>
+</body>
+</html>
+
+<style>
+
+body {
+    background-color: black;
+    background-image:url('https://picsum.photos/3000/3000?random=2');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 85vh;
+    width: 50vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Nav Bar */
+.custom-nav {
+    width: 50vw;
+    background-color: rgba(220,220,220, 0.9);
+    color: black;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-text {
+    color: rgb(53, 53, 53);
+}
+
+#nav-cust-link {
+    color: rgb(53, 53, 53);
+}
+
+#nav-cust-link:hover {
+    color: rgb(0, 0, 0);
+}
+
+</style>
