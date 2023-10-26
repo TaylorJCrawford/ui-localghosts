@@ -45,10 +45,12 @@ body {
 
 #nav-cust-link {
     color: rgb(53, 53, 53);
+    font-weight: bold;
+    margin-right: 5px;
 }
 
 #nav-cust-link:hover {
-    color: rgb(0, 0, 0);
+    color: #42B54C;
 }
 
 #navbarNav {
@@ -81,6 +83,6 @@ body {
 #home-image-container {
     margin-top: 30px;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center; 
 }
