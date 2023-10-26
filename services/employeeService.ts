@@ -1,4 +1,6 @@
 import { DeliveryEmployee } from "../model/deliveryEmployee"
+const employeeValidator = require('../validator/employeeValidator');
+
 const axios = require('axios');
 
 // Function to get all delivery employees in DB
@@ -13,6 +15,10 @@ module.exports.getDeliveryEmployees = async function (): Promise<DeliveryEmploye
 }
 
 module.exports.createEmployee = async function (deliveryEmployee: DeliveryEmployee): Promise<number> {
+    const error: string = employeeValidator.validateEmployee(deliveryEmployee)
+    if (error) {
+        throw new Error(error)
+    }
     try {
         const response = await axios.post('http://localhost:8080/api/employee/delivery', deliveryEmployee)
         return response.data

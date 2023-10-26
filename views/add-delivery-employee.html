@@ -3,7 +3,11 @@
 {% block content %}
 
 <h1>Create Delivery Employee</h1>
-<!-- Even after forgetting to log my laptop and getting my laptop background changed. I forgot again when I went to make tea... -->
+{% if errormessage %}
+<div class="alert alert-danger" role="alert">
+    {{ errormessage }}
+</div>
+{% endif %}
 <form action="/employee/delivery/create" method="post">
     <div class="form-group">
         <label for="firstName">First Name</label>
