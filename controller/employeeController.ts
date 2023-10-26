@@ -13,8 +13,7 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
-        let tokenValue: String = req.session.token
-
-        res.render('list-delivery-employees', { deliveryEmployees: data, token: tokenValue })
+        const { token } = req.session;
+        res.render('list-delivery-employees', { deliveryEmployees: data, token })
     })
 }
