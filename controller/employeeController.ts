@@ -13,7 +13,8 @@ module.exports = function (app: Application) {
             console.error(e);
         }
 
-        res.render('list-delivery-employees', { deliveryEmployees: data })
+        const { token } = req.session;
+        res.render('list-delivery-employees', { deliveryEmployees: data, token })
     })
 
     app.get ('/employees/delivery/:id', async (req: Request, res: Response) => {
