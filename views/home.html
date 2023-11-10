@@ -3,9 +3,11 @@
 {% block content %}
 
     <div class="container">
-        <div id="homeHeaderTitle">
-            <h1 id="home-title">Employee Management System</h1>
+        <div class="header-container">
+            <h1 class="main-title">Employee Management System</h1>
+            <h3 class="sub-title">Making your HR experience easier</h3>
         </div>
+
 
         <div id="homeBody">
             <p>Welcome to our Employee Management System, your one-stop solution for seamless HR administration. 
@@ -23,8 +25,47 @@
             <p>
                 Welcome to a more efficient and streamlined HR experience!
             </p>
-            <div id="home-image-container">
+            <div class="line-break"></div>
+            <!-- <div id="home-image-container">
                 <img src="public/team.jpg" id="team-image">
+            </div> -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="height: 350px;">
+                        <div class="card-header">
+                        View Employees
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">View All Current Employees</h5>
+                        <p class="card-text">To view all current employees in our records, use this link.</p>
+                        <a href="/employees/delivery" class="btn custom-button">View Employees</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="height: 350px;">
+                        <div class="card-header">
+                        Add Employee
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">Add a New Employee to Records</h5>
+                        <p class="card-text">To add a new employee into the company's records, use this link.</p>
+                        <a href="/employees/delivery/create" class="btn custom-button">Add Employee</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="height: 350px;">
+                        <div class="card-header">
+                        Delete Employee
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title">Delete Existing Employee</h5>
+                        <p class="card-text">Select this link, then choose an employee you would like to delete.</p>
+                        <a href="/employees/delivery" class="btn custom-button">Delete Employee</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

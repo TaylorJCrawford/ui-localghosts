@@ -2,7 +2,12 @@
 
 {% block content %}
 
-<h1>Create Delivery Employee</h1>
+<div class="header-container">
+    <h1 class="main-title">
+        Create Delivery Employee
+    </h1>
+</div>
+
 {% if errormessage %}
 <div class="alert alert-danger" role="alert">
     {{ errormessage }}
@@ -10,26 +15,26 @@
 {% endif %}
 <form action="/employee/delivery/create" method="post">
     <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" class="form-control" value="{{ firstName }}"required>
+        <label for="firstName" class="form-titles">First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control" value="{{ firstName }}" placeholder="Enter employee first name">
     </div>
     <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" class="form-control" value="{{ lastName }}"required>
+        <label for="lastName" class="form-titles">Last Name</label>
+        <input type="text" id="lastName" name="lastName" class="form-control" value="{{ lastName }}" placeholder="Enter employee last name" required>
     </div>
     <div class="form-group">
-        <label for="salary">Salary</label>
-        <input type="number" id="salary" name="salary" class="form-control" value="{{ salary }}" required>
+        <label for="salary" class="form-titles">Salary</label>
+        <input type="number" id="salary" name="salary" class="form-control" value="{{ salary }}" placeholder="Enter employee salary" required>
     </div>
     <div class="form-group">
-        <label for="bankAccountNumber">Bank Account Number</label>
-        <input type="string" id="bankAccountNumber" name="bankAccountNumber" class="form-control" value="{{ bankAccountNumber }}"required>
+        <label for="bankAccountNumber" class="form-titles">Bank Account Number</label>
+        <input type="string" id="bankAccountNumber" name="bankAccountNumber" class="form-control" value="{{ bankAccountNumber }}" placeholder="Enter employee bank account number" required>
     </div>
     <div class="form-group">
-        <label for="niNumber">National Insurance Number</label>
-        <input type="string" id="niNumber" name="niNumber" class="form-control" value="{{ niNumber }}"required>
+        <label for="niNumber" class="form-titles">National Insurance Number</label>
+        <input type="string" id="niNumber" name="niNumber" class="form-control" value="{{ niNumber }}" placeholder="Enter employee NI Number" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn custom-button">Submit</button>
 </form>
 
 {% endblock %}

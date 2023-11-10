@@ -36,3 +36,23 @@ module.exports.getDeliveryEmployeeById = async function (id: number): Promise<De
         throw new Error('Could not get delivery employee with ID ' +id)
     }
 }
+
+module.exports.deleteDeliveryEmployee = async function (id: number) {
+    try {
+        const response = await axios.delete(`http://localhost:8080/api/employee/delivery/${id}`);
+        return response.data;
+    } catch (e) {
+        throw new Error('Unable to delete delivery employee');
+    }
+}
+
+
+// // Function to update a delivery employee by their ID
+// module.exports.updateDeliveryEmployeeOfId = async function (id: number): Promise<DeliveryEmployee> {
+//     try {
+//         const response = await axios.get(`http://localhost:8080/api/employee/${id}`);
+//         return response.data;
+//     } catch (e) {
+//         throw new Error('Could not update delivery employee of ID ' +id);
+//     }
+// }

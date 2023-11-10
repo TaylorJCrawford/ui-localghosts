@@ -1,17 +1,20 @@
 {% extends 'templates/master.html' %}
 
 {% block content %}
+<div class="header-container">
+    <h1 class="main-title">Delivery Employees</h1>
+    <h3 class="sub-title">All current Kainoos Softworn employees</h3>
+</div>
 
-<h1>Delivery Employees</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Salary</th>
-            <th scope="col">Bank Account Number</th>
-            <th scope="col">NI Number</th>
-            <th scope="col">View Employee</th>
+            <th scope="col">Bank Account #</th>
+            <th scope="col">NI #</th>
+            <th scope="col">View</th>
         </tr>
     </thead> 
     <tbody>
@@ -21,7 +24,7 @@
             <td>£{{ employee.salary }}</td>
             <td>{{ employee.bankAccountNumber}}</td>
             <td>{{ employee.niNumber }}</td>
-            <td><a href='/employees/delivery/{{ employee.id }}'>View</a></td>
+            <td><a href="/employees/delivery/{{ employee.id }}" class="btn custom-button" role="button">View Employee</a></td>
         </tr>
         {% endfor %}
     </tbody>

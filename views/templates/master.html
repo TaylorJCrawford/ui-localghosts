@@ -8,51 +8,57 @@
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-    <!-- Nav Start -->
-    <br>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark custom-nav center">
-          <a href="/" ><img src="/public/kainoos.png" style="width: 140px;"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mr-auto">
-                {% if token != undefined %}
-                  <li class="nav-item active">
-                      <a class="nav-link" href="/" id="nav-cust-link">Home</a>
+            <a href="/" ><img src="/public/kainoos.png" style="width: 140px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                  {% if token != undefined %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" id="nav-cust-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employees/delivery" id="nav-cust-link">Delivery Employee</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/employee/delivery/create" id="nav-cust-link">Create New Delivery Employee</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/employees/delivery" id="nav-cust-link">Delivery Employee</a>
+                  {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                  {% if token == undefined %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" id="nav-cust-link" style="margin-top: 1px;">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn disabled" id="nav-cust-link">Sign-Up</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link"href="/logout" id="nav-cust-link">Logout</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/employee/delivery/create" id="nav-cust-link">Create New Delivery Employee</a>
-                </li>
-                {% endif %}
-              </ul>
-              <ul class="navbar-nav">
-                {% if token == undefined %}
-                  <li class="nav-item">
-                      <a class="nav-link" href="/login" id="nav-cust-link">Login</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link btn disabled" id="nav-cust-link">Signup</a>
-                  </li>
-                  {% else %}
-                  <li class="nav-item">
-                    <a class="nav-link"href="/logout" id="nav-cust-link">Logout</a>
-                </li>
-                {% endif %}
-              </ul>
-          </div>
-      </nav>
-      </div>
-    <!-- Nav End -->
+                  {% endif %}
+                </ul>
+            </div>
+        </nav>
+        
+    </div>
 
-      <br>
-      <div class="main-content center">
-        {% block content %} {% endblock %}
-      </div>
-      <br>
+    <div class="main-container">
+        <div class="main-content center">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <p class="footer-text">&copy; Kainoos Softworn 2023 | All data is property of Kainoos Softworn</p>
+        </div>
+    </footer>
+      
 </body>
 </html>

@@ -52,4 +52,16 @@ app.post('/employee/delivery/create', async (req:Request, res:Response) => {
         const { token } = req.session;
         res.render('list-delivery-employee', { employee: data, token })
     })
+
+
+    app.post('/employee/delivery/:id', async(req: Request, res: Response) => {
+        try {
+            await employeeService.deleteDeliveryEmployee(req.body.deleteDeliveryEmployee);
+            res.redirect('list-delivery-employee');
+        } catch (e) {
+            console.error(e);
+            res.render('list-delivery-employee');
+        }
+
+    })
 }
