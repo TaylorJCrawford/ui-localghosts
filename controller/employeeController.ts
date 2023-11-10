@@ -56,7 +56,7 @@ app.post('/employee/delivery/create', async (req:Request, res:Response) => {
 
     app.post('/employee/delivery/:id', async(req: Request, res: Response) => {
         try {
-            await employeeService.deleteDeliveryEmployee(req.body.deleteDeliveryEmployee);
+            await employeeService.deleteDeliveryEmployee(req.params.id);
             res.redirect('list-delivery-employee');
         } catch (e) {
             console.error(e);
